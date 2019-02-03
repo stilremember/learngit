@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="home/lib/bootstrap.min.css"/>
+    <script type="text/javascript" src="home/lib/jquery.min.js"></script>
+    <script src="homePage_new.js"></script>
+    <title>互联网+排水信息平台</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body {
+        height: 100%;
+        width: 100%;
+        background-image: url("home/img/backgrund.png");
+        background-size: 100% 100%;
+    }
+    .header{
+        height: 90px;
+        width: 100%;
+        /*background-color: rgba(89,168,240,0.8);*/
+        background-color: rgba(0,127,206,0.8);
+    }
+    .header .logo{
+        padding-left: 32px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        float: left;
+        /*background-color: rgba(0,127,206,0.4);*/
+        padding-right: 80px;
+        /*background:linear-gradient(rgba(0,127,206,0.6),rgba(89,168,240,0.8));*/
+    }
+    @media screen and (max-width: 1900px) {
+        .header .logo {padding-right: 20px;}
+    }
+    .header_menu{
+        float: left;
+        height: 100%;
+    }
+    .header_menu .menu{
+        float: left;
+        padding: 28px 31px 0px 31px;
+        text-align: center;
+        height: 100%;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 1900px) {
+        .header_menu .menu{padding: 28px 5px 0px 5px;}
+    }
+    @media screen and (max-width: 798px) {
+        .header_menu .menu{display: none}
+    }
+
+    .header_menu .menu:hover{
+        background-color: #5baaee;
+    }
+    .header_menu .select{
+        background-color: #5baaee;
+    }
+    .header_menu .menu .menu_img{
+        float: left;
+    }
+    .header_menu .menu .menu_img img{
+        width: 34px;
+        height: 34px;
+    }
+    .header_menu .menu .menu_name{
+        margin-left: 10px;
+        float: left;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 1438px) {
+        .header_menu .menu .menu_name{display: none}
+    }
+    .header .user_info{
+        font-size: 18px;
+        color: #fff;
+        float: right;
+        margin-right: 40px;
+        margin-top: 16px;
+    }
+
+    .header .user_info .user_img{
+        width: 54px;
+        height: 54px;
+        margin-right: 10px;
+        border-radius: 50%;
+
+    }
+    @media screen and (max-width: 1000px) {
+        .user_info{display: none}
+    }
+
+    .header .exist{
+        background-image: url("home/img/tuichu.png");
+        background-size: 100%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        float: right;
+        margin: 28px 32px 28px 0px;
+    }
+    .container_div{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .container_div .module_panel{
+        /*background-color: rgba(255,255,255,0.2);*/
+        width: 1080px;
+        height: 680px;
+        margin: 70px auto;
+        position: relative;
+    }
+    .module{
+        /*float: left;*/
+        /*margin: 10px;*/
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+    }
+    .module:hover{
+        border: 2px solid #fff;
+    }
+    .module .module_name{
+        padding: 0 10px;
+    }
+
+    .wrapper {
+        /*display: grid;*/
+        /*display:-ms-grid;*/
+        /*grid-template-columns:repeat(5,220px);*/
+        /*-ms-grid-columns: 220px 220px 220px 220px  220px;*/
+        /*-ms-grid-rows:220px 220px 220px;*/
+        /*grid-template-rows: 210px 20px 210px 20px 210px 20px 210px;*/
+        /*grid-template-rows:repeat(3,220px);*/
+    }
+</style>
+<script>
+
+
+
+</script>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <img src="home/img/logo.png">
+    </div>
+    <div class="header_menu">
+        <div class="menu" title="智慧排水" type="zhps">
+            <div class="menu_img"><img src="home/img/zhihuipaishui.png"></div>
+            <div class="menu_name">智慧排水</div>
+        </div>
+        <div class="menu" title="智慧河流" type="zhhl">
+            <div class="menu_img"><img src="home/img/heliu.png"></div>
+            <div class="menu_name">智慧河流</div>
+        </div>
+        <div class="menu" title="智慧三防" type="zhsf">
+            <div class="menu_img"><img src="home/img/sanfang.png"></div>
+            <div class="menu_name">智慧三防</div>
+        </div>
+        <div class="menu" title="海绵城市" type="hmcs">
+            <div class="menu_img"><img src="home/img/cengshi.png"></div>
+            <div class="menu_name">海绵城市</div>
+        </div>
+        <div class="menu" title="水况" type="sk">
+            <div class="menu_img"><img src="home/img/shuikuang.png"></div>
+            <div class="menu_name">水况</div>
+        </div>
+    </div>
+
+    <div class="exist" title="退出系统"></div>
+
+    <div class="user_info">
+        <img class="user_img" src="home/img/touxiang.png">
+        <span class="user_name">你好,管理员</span>
+    </div>
+
+</div>
+
+<div class="container_div">
+    <div class="module_panel wrapper">
+
+    </div>
+</div>
+
+
+</body>
+</html>

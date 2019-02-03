@@ -1,0 +1,103 @@
+# ------------------------------  �¸�AgCloudƽ̨���� ��ʼ  ------------------------------
+# Ӧ������
+# ע�⣺security.oauth2.client.clientId���ͻ���ID�� ������spring.application.name��Ӧ�����ƣ���
+# �޸���Ӧ���������֣���Ҫ��sso��������� �ͻ���ID #mobinsp
+spring.application.name=awater
+# TOMCAT CONFIG
+server.context-path=/${spring.application.name}
+server.port=8093
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+# ����Ϊdebugʱ���о�̬��ԴURL�����Զ�����ʱ���
+agcloud.framework.ui.debug=true
+
+#sso-server��ַopus-admin-sso
+#agcloud.framework.sso.sso-server-url = http://localhost/opus-admin-sso
+#agcloud.framework.sso.sso-server-url = http://192.168.30.2:7090/opus-admin-sso
+#agcloud.framework.sso.sso-server-url = http://192.168.30.133:7090/opus-admin-sso
+agcloud.framework.sso.sso-server-url = http://192.168.30.133:8890/opus-front-sso
+agcloud.framework.sso.sso-logout-url = ${agcloud.framework.sso.sso-server-url}/exit
+
+#�ͻ���ID
+security.oauth2.client.clientId = ${spring.application.name}
+#�ͻ�������  #mobinsp123
+security.oauth2.client.clientSecret = awater-admin123
+#������֤�ĵ�ַ
+security.oauth2.client.user-authorization-uri = ${agcloud.framework.sso.sso-server-url}/oauth/authorize
+#�������Ƶĵ�ַ
+security.oauth2.client.access-token-uri = ${agcloud.framework.sso.sso-server-url}/oauth/token
+#����jwt��������Ҫ��Կ�ĵ�ַ
+security.oauth2.resource.jwt.key-uri = ${agcloud.framework.sso.sso-server-url}/oauth/token_key
+
+# ------------------------------  �¸�AgCloudƽ̨���� ����  ------------------------------
+
+#druid-config
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
+spring.datasource.username=awater_kettle
+spring.datasource.password=awater_kettle
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+#spring.datasource.url=jdbc:mysql://192.168.30.147:3306/emgy_db?useSSL=true&serverTimezone=UTC
+#spring.datasource.username=root
+#spring.datasource.password=root
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.ImprovedNamingStrategy
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.current_session_context_class=org.springframework.orm.hibernate4.SpringSessionContext
+#��������
+spring.jpa.properties.hibernate.cache.use_second_level_cache=true
+#spring.jpa.properties.hibernate.cache.use_query_cache=true
+#spring.jpa.properties.hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+spring.jpa.properties.hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+
+#spring.datasource.url=jdbc:mysql://192.168.19.193:3306/newagcloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+
+#Druid ����Դ���ã��̳�spring.datasource.* ���ã���ͬ�򸲸�
+spring.datasource.druid.initial-size=2
+spring.datasource.druid.max-active=30
+spring.datasource.druid.min-idle=2
+spring.datasource.druid.max-wait=1234
+#spring.datasource.druid.pool-prepared-statements=true
+#spring.datasource.druid.max-pool-prepared-statement-per-connection-size=5
+#spring.datasource.druid.max-open-prepared-statements= #�ȼ��������max-pool-prepared-statement-per-connection-size
+spring.datasource.druid.validation-query=select 1 from dual
+spring.datasource.druid.validation-query-timeout=1
+spring.datasource.druid.test-on-borrow=true
+spring.datasource.druid.test-on-return=true
+spring.datasource.druid.test-while-idle=true
+spring.datasource.druid.time-between-eviction-runs-millis=10000
+spring.datasource.druid.min-evictable-idle-time-millis=30001
+spring.datasource.druid.async-close-connection-enable=true
+
+# MYBATIS CONFIG
+#mybatis.config-location=classpath:mybatis.xml
+
+# REDIS CONFIG
+#spring.redis.host=localhost
+#spring.redis.port=6379
+
+# SPRING AOP CONFIG
+spring.aop.auto=true
+spring.aop.proxy-target-class=true
+
+# HTTP ENCODING
+spring.http.encoding.charset=utf-8
+spring.http.encoding.enabled=true
+spring.http.encoding.force=true
+
+# Ϊtrueʱ��jsp�޸�������������
+server.jsp-servlet.init-parameters.development=true
+
+# LOG CONFIG
+#logging.file=log/log_agcloud_demo.log
+logging.level.com.augurit.agcloud=debug
+
+
+
+
+

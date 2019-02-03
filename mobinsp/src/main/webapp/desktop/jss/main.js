@@ -1,0 +1,81 @@
+require.config({
+  packages: [
+ /* {name:'dojo',location:'../lib/arcgis_js_api/dojo',main:'dojo'},
+  {name:'esri',location:'../lib/arcgis_js_api/esri'},
+  {name:'dijit',location:'../lib/arcgis_js_api/dijit'},
+  {name:'dojox',location:'../lib/arcgis_js_api/dojox'},
+  {name:'init',location:'../lib/arcgis_js_api',main:'init'},
+  {name:'moment',location:'../lib/arcgis_js_api/moment',main:'moment'},
+  {name:'custom',location:'../lib/custom'},
+  // {name:'eims',location:'../eims'},
+  {name:'psemgy',location:'http://192.168.30.147/psemgy'},
+
+  //{name:'fms',location:'../fms'},
+      {name:'psfacility',location:'http://192.168.30.147/psfacility'},
+      {name:'mobile',location:'../mobile'},
+  {name:'modelling',location:'../modellingc'},
+  {name:'monitoring',location:'../monitoring'},
+  {name:'pipe',location:'../pipe'},
+  {name:'pipe-network',location:'../pipe/pipeNetwork/js'},
+  {name:'do-lib',location:'dolib'},
+
+  {'name':'drainage-model','location':'../modelling/js'},
+  {'name':'system-jslib','location':'../lib'},*/
+  {'name':'mobinsp','location':'../desktop/html'},
+
+	],
+  paths: {
+    'jquery': '../plugin/jquery/jquery.min',
+    'customScrollbar': '../plugin/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar',
+    //bootstrap
+    'bootstrap': '../plugin/boostrap/bootstrap.min',
+    'bootstrapTable': '../plugin/bootstrap-table/bootstrap-table',
+    'bootstrapTableCN': '../plugin/bootstrap-table/locale/bootstrap-table-zh-CN.min',
+    'bootstrapValidator' : '../plugin/bootstrapvalidator/bootstrapValidator',
+    'bootstrapValidatorCN' : '../plugin/bootstrapvalidator/language/zh_CN',
+    'bootstrapDatetimepicker': '../plugin/datetimepicker/js/bootstrap-datetimepicker',
+    'bootstrapDatetimepickerCN': '../plugin/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN',
+    'bootstrapSelect':'../plugin/bootstrap-select/bootstrap-select',
+    //bootstrap上传插件
+    'fileInput': '../plugin/bootstrap-fileinput/fileinput.min',
+    'fileInputLocaleZh': '../plugin/bootstrap-fileinput/fileinput_locale_zh',
+      //vue
+      'vue':'../plugin/vue/vue',
+    //提示框
+    'layer': '../plugin/layer-v3.0/layer',
+		//图表
+    'highcharts': '../plugin/highcharts/highcharts',
+    'highchartsMore':'../plugin/highcharts/highcharts-more',//多图形支持
+    'echarts':'../plugin/echarts/echarts',
+    'svg':'../plugin/svg/snap.svg',
+    'md5':'md5',
+    'myLib':'myLib',
+    'deskIndex':'desktop_myLib',
+      //桌面js
+    'desktop': 'index',
+  },
+    //引用公共模块到插件中
+  shim: {
+    //bootstrap
+    'bootstrap': ['jquery'],
+    'bootstrapTable': ['jquery'],
+    'bootstrapTableCN': ['jquery', 'bootstrapTable'],		
+    'bootstrapValidator': ['jquery'],
+    'bootstrapValidatorCN': ['jquery', 'bootstrapValidator'],
+    'bootstrapDatetimepicker': ['jquery'],
+    'bootstrapDatetimepickerCN': ['jquery', 'bootstrapDatetimepicker'],
+    'bootstrapSelect': ['jquery'],
+     //bootstrap上传插件
+    'fileInput':['jquery'],
+    'fileInputLocaleZh':['jquery','fileInput'],
+     //提示框
+    'layer': ['jquery'],
+    'highcharts': ['jquery'],
+    'highchartsMore': ['jquery','highcharts'],
+    'echarts': ['jquery'],
+      'vue':['jquery']
+  },
+	 urlArgs: "bust=" + (new Date()).getTime()  //防止读取缓存，调试用  
+});
+
+//require(['jquery','../js/desktop'],function($, hplus, appFunc){});

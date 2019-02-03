@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>奥格智慧排水防涝信息系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8; IE=EDGE" />
+    <script>
+        var loginName = window.parent.loginName || 'agcomadmin';
+    </script>
+    <link rel="shortcut icon" href="../image/style/awater.png">
+    <link href="../css/lanrenzhijia.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="../plugin/themes/base/jquery.ui.all.css" />
+    <link rel="stylesheet" href="../plugin/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css" />
+
+    <script type="application/javascript" src="../plugin/othor/require.js"></script>
+    <script type="application/javascript" src="main.js"></script>
+    <style>
+        .top {
+            width: 100%;
+            height: 74px;
+            background: #057ccf url(../image/style/logo.png) left center no-repeat;
+            background-position-x: 50%;
+            box-shadow: 0 0 5px #999;
+            webkit-box-shadow: 0 0 5px #999;
+            position: relative;
+            z-index: 1000;
+        }
+        .user {
+            float: right;
+            height: 60px;
+            margin-top: 7px;
+        }
+        .user li a.exit:hover {
+            background: url(../images/exit_h.png) no-repeat 0 0;
+            color: #fff;
+        }
+        .user li a.exit {
+            background: url(../images/exit.png) no-repeat 0 0;
+            color: #b9e8ff;
+            padding-left: 24px;
+            height: 20px;
+            line-height: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body onload="init_();" oncontextmenu="return false" class="homeBg">
+<div class="top clearfloat">
+    <ul class="user clearfloat">
+        <li>
+            <a class="exit" href="logout" >退出</a>
+        </li>
+    </ul>
+</div>
+
+<ul id="deskIcon">
+
+</ul>
+
+<div id="homePage-context-menu">
+    <ul>
+        <li id="menu-system-delete"><img src="../images/page_white_delete.png" />&nbsp;移除系统</li>
+        <li id="menu-password-edit"><img src="../images/page_white_edit.png"/>&nbsp;修改密码</li>
+    </ul>
+</div>
+
+</body>
+<script type="text/javascript">
+    require(['jquery','desktop','deskIndex'],function($,desktop,deskIndex){
+        desktop.init();
+        desktop.initDeskIcon();
+        deskIndex.initTheme();
+    });
+    function init_(){
+        var desktop = require('desktop');
+        desktop.init();
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+package com.augurit.myproject.utils.plugin.kettle.execution;
+
+import org.apache.log4j.Logger;
+import org.pentaho.di.core.KettleEnvironment;
+import org.pentaho.di.core.exception.KettleException;
+import org.pentaho.di.core.exception.KettleMissingPluginsException;
+import org.pentaho.di.core.exception.KettleXMLException;
+import org.pentaho.di.core.util.EnvUtil;
+import org.pentaho.di.trans.Trans;
+import org.pentaho.di.trans.TransMeta;
+import org.pentaho.di.trans.step.StepMetaDataCombi;
+
+
+public class TramsFormThread implements Runnable{
+    private static final Logger log = Logger.getLogger(TramsFormThread.class);
+    private TransMeta transMeta=null;
+    private  Trans trans;
+
+    public TramsFormThread(String path){
+        try {
+            this.transMeta = new TransMeta(path);
+        } catch (KettleXMLException e) {
+            e.printStackTrace();
+        } catch (KettleMissingPluginsException e) {
+            e.printStackTrace();
+        }
+        ;
+    }
+
+    @Override
+    public void run() {
+        try {
+            trans=new Trans(transMeta);
+            trans.execute(null);
+            trans.waitUntilFinished();//等待执行结束
+            if(trans.getErrors()>0){
+                log.info(transMeta.getName()+ "转换出错!!!");
+            }else{
+                log.info("转换成功!!!");
+            }
+        } catch (KettleException e) {
+            e.printStackTrace();
+            log.error("初始化转换异常!");
+        }
+    }
+
+}

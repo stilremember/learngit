@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sf.dozer:dozer:5.3.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../javaApp/gradle-res/caches/modules-2/files-2.1/net.sf.dozer/dozer/5.3.2/fb10fbcb72f936c1eecb195ba279df4e52bcabb0/dozer-5.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../javaApp/gradle-res/caches/modules-2/files-2.1/net.sf.dozer/dozer/5.3.2/c868594dc502cbaf1ad1630de672918ee3a8d5a0/dozer-5.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

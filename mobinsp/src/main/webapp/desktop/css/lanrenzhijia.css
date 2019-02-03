@@ -1,0 +1,221 @@
+@charset "utf-8";
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+fieldset, img {
+	border:0;
+}
+ol, ul, li {
+	list-style:none;
+}
+caption, th {
+	text-align:left;
+}
+/*页面基础样式*/
+html {
+	overflow:hidden;
+}
+body {
+	height: 100%;
+	position: relative;
+	font-size: 14px;
+	/*background:url(../images/bg4.png);*/
+	background-size: 100% 100%;
+	font-family: Arial,'Microsoft YaHei';
+	margin:0;
+	padding:0
+	
+}
+a {
+	font-size: 12px;
+}
+a:link {
+	text-decoration: none;
+	color: #FFF;
+}
+a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover {
+	text-decoration: none;
+	color: #FFF;
+}
+a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+.corner {/*只在支持css3的高级浏览器起作用*/
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 2px 2px 8px #444;
+	-webkit-box-shadow: 2px 2px 8px #444;
+	box-shadow:2px 2px 8px #444;
+}
+.loading {
+	background:url(../images/loading.gif) no-repeat center center
+}
+/*桌面图标*/	
+#deskIcon {
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	zoom:1;
+	position:relative;
+	min-width:1000px;
+}
+.desktop_icon {
+	width: 100px;
+	height: auto;
+	max-height: 145px;
+	padding: 5px;
+	cursor:pointer;
+	margin-left:-1000px;
+	text-align:center;
+}
+.desktop_icon span {
+	display:block;
+}
+.desktop_icon .icon {
+	width:70px;
+	height:70px;
+	margin:5px auto;
+	position: relative;
+}
+.desktop_icon .icon img {
+	width:70px;
+	height:70px;
+}
+.desktop_icon .text {
+	display:inline-block;
+	width:100px;
+	height: 40px;
+	overflow: hidden;
+	line-height:20px;
+	text-align:center;
+	color:#fff;
+   overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2; 
+}
+.desktop_icon_over {
+	background: transparent;
+    background-color: rgba(255,255,255,0.1);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#50ffffff,endColorstr=#50ffffff);
+	width: 100px;
+	height: auto;
+	max-height: 145px;
+	padding-top:5px;
+	padding-left:5px;
+	border-radius: 10px;
+}
+
+.oa{
+	position: absolute;
+	height: 100%;
+	top: 74px;
+	right: 50px;
+	width:380px;
+	z-index: 100;
+}
+
+.notice{
+	width: 380px;
+	text-align: left;
+	margin: 20px 20px 0 10px;
+}
+.notice_list{
+	padding: 10px;
+	border-radius: 0 0 5px 5px;
+	background: transparent;
+	background-color: rgba(0,0,0,0.1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#1C000000, endcolorstr=#1C000000);
+	box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+.notice_list li {
+	box-sizing: border-box;
+	color: #555;
+	height: 36px;
+	line-height: 36px;
+	border-bottom: 1px dashed #61adf5;
+	/*background: url(../images/li_icon.png) no-repeat 10px 13px;*/
+	text-indent: 10px;
+}
+.notice_list li:hover{
+	/*background-color: #edf9ff;*/
+	/*background: url(../images/li_icon_h.png) no-repeat 10px 13px;*/
+	font-size: 16px;
+	text-decoration: underline;
+	text-indent: 10px;
+}
+li#moreData:hover {
+	background-color: rgba(0,0,0,0);
+}
+
+.noticeName {
+	display: block;
+	float: left;
+	width: 270px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.notice_list li a, .notice_list .notice_footer a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+}
+.notice_list li:hover a, .notice_list .notice_footer a:hover {
+	color: #F60;
+	text-decoration: underline;
+}
+.notice_list li span{
+	color: #d1e9ff;
+	float: right;
+	font-size: 14px;
+}
+
+
+.notice_tab{
+	color: #fff;
+	text-indent: 10px;
+	background: transparent;
+	background-color: rgba(0,0,0,0.2);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#3F000000, endcolorstr=#3F000000);
+	height: 36px;
+	line-height: 36px;
+	border-radius: 5px 5px 0 0;
+}
+
+.notice_tab .more{
+	float: right;
+	font-size: 14px;
+	margin-right: 5px;
+	color: #fff;
+	cursor: pointer;
+}
+.notice_tab .more:hover{
+	color: #fcff00;
+}
+
+/* 首页待办CSS样式开始 */
+.schedule_wrapper { overflow-y: auto; }
+#schedule li { width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color:#fff; }
+#schedule li.schedule_service span { float: none; color: #F60; }
+
+/* 首页右键菜单样式 */
+#homePage-context-menu { display: none; }
+
+/* 首页编辑业务系统菜单 */
+#password-edit-container .form-item { width: 100%; float: left; height: 68px; line-height: 34px; position: relative; }
+span.invalid-msg { font-size: 12px; color: #f55; }
+#password-edit-container .input-block { width: 450px; position: relative; float: left; }
+#password-edit-container .form-label { float: left; width: 150px; text-align: right; font-size: 14px; color: #666; padding-right: 10px; }
+#password-edit-container .txt03 { width: 350px; line-height: 16px; padding: 9px 10px; border: 1px solid #cccccc; float: none; font-size: 14px; font-family: arial,"宋体"; color: #999; overflow: hidden; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
